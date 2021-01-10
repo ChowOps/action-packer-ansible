@@ -2,10 +2,13 @@ name: 'Packer with Ansible'
 description: 'GitHub Action to run Packer with Ansible'
 author: 'Christopher Chow <chris@chowops.com>'
 
+inputs:
+  args:
+    description: Arguments to packer command
+    required: true
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
-
-branding:
-  color: blue
-  icon: package
+  args:
+    - ${{ inputs.args }}
