@@ -1,7 +1,7 @@
 FROM hashicorp/packer:light
 
-COPY entrypoint.sh /root/
+COPY entrypoint.sh /entrypoint.sh
 
 RUN apk add ansible
 
-ENTRYPOINT ["/root/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
